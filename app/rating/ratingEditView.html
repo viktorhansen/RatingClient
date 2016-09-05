@@ -1,0 +1,79 @@
+﻿<form class="form-horizontal" name="ratingForm" novalidate ng-controller="RatingEditCtrl as vm">
+    <div class="form-group" ng-class="{'has-error':ratingForm.inputRatingName.$invalid && ratingForm.inputRatingName.$dirty}">
+        <label class="col-md-2 control-label" for="inputRatingName">Name</label>
+
+        <div class="col-md-4">
+            <input class="form-control"
+                   id="inputRatingName"
+                   name="inputRatingName"
+                   type="text"
+                   placeholder="Name (required)"
+                   ng-model="vm.rating.Name"
+                   required
+                   ng-minlength="1"
+                   ng-maxlength="18" />
+        </div>
+        <span class="help-block has-error">
+            <span ng-show="ratingForm.inputRatingName.$error.required">
+                Rating name is required
+            </span>
+            <span ng-show="ratingForm.inputRatingName.$error.minlength">
+                Rating name has to be at least 1 char
+            </span>
+            <span ng-show="ratingForm.inputRatingName.$error.required">
+                Rating name can not be more than 18 chars
+            </span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':ratingForm.inputRatingValue.$invalid &&
+         ratingForm.inputRatingValue.$dirty}">
+        <label class="col-md-2 control-label" for="inputRatingValue">Value</label>
+
+        <div class="col-md-4">
+            <input class="form-control"
+                   id="inputRatingValue"
+                   name="inputRatingValue"
+                   type="text"
+                   placeholder="Value (required)"
+                   ng-model="vm.rating.Value"
+                   required
+                   ng-minlength="1"
+                   ng-maxlength="18" />
+        </div>
+        <span class="help-block has-error">
+            <span ng-show="ratingForm.inputRatingValue.$error.required">
+                Rating value is not defined
+            </span>
+            <span ng-show="ratingForm.inputRatingValue.$error.minlength">
+                Rating value is not defined
+            </span>
+        </span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+            <span>
+                <button class="btn btn-primary"
+                        ng-click="vm.submit()"
+                        ng-disabled="ratingForm.$invalid">
+                    Save
+                </button>
+            </span>
+            <span>
+                <button class="btn btn-default"
+                        ng-click="vm.cancel(ratingForm)">
+                    Cancel
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group"
+         ng-show="vm.message">
+        <div class="col-md-6">
+            <pre style="font:inherit;">{{vm.message}}</pre>
+        </div>
+    </div>
+
+</form>

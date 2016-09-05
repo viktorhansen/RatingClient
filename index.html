@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Ratings</title>
+    <meta charset="utf-8" />
+
+    <!--style sheets-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="ratingsModule">
+
+
+    <div class="container">
+        <div ng-include="'app/rating/ratingView.html'"></div>
+        <div ng-include="'app/rating/ratingEditView.html'"></div>
+    </div>
+
+    <!--library scripts-->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+
+    <!--application script-->
+    <script src="app/app.js"></script>
+
+    <!--services-->
+    <script src="common/common.services.js"></script>
+    <script src="common/ratingResource.js"></script>
+
+    <!--rating controllers-->
+    <script src="app/rating/ratingCtrl.js"></script>
+    <script src="app/rating/ratingEditCtrl.js"></script>
+</body>
+
+</html>

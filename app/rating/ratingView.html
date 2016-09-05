@@ -1,0 +1,18 @@
+﻿<div class="panel panel-primary" ng-controller="RatingCtrl as vm">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Value</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rating in vm.ratings">
+                <td>{{rating.id}}</td>
+                <td>{{rating.name}}</td>
+                <td>{{rating.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
